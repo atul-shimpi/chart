@@ -1,7 +1,7 @@
 var goalbar = angular.module('goalbar', []);
 
 goalbar.controller('GoalBarController', function($scope) {
-  $scope.current = 280;
+  $scope.current = 300;
   $scope.goal = 500;
   
   $scope.infoAbove = false;
