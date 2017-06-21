@@ -34,19 +34,19 @@ body {
   font-weight: bold;
 }
 .goal-bar .bar-label:nth-child(2) {
-  top: 10%;
+  top: 80%;
 }
 .goal-bar .bar-label:nth-child(3) {
-  top: 20%;
+  top: 60%;
 }
 .goal-bar .bar-label:nth-child(4) {
-  top: 30%;
-}
-.goal-bar .bar-label:nth-child(5) {
   top: 40%;
 }
+.goal-bar .bar-label:nth-child(5) {
+  top: 20%;
+}
 .goal-bar .bar-label:nth-child(6) {
-  top: 50%;
+  top: 0;
 }
 .goal-bar .bar-label:nth-child(7) {
   top: 60%;
@@ -64,7 +64,7 @@ body {
   top: 100%;
 }
 .goal-bar .bar-label:first-child {
-  margin-top: 0;
+  top: 100%;
 }
 .goal-bar .bar-label:last-child {
   margin-top: -12px;

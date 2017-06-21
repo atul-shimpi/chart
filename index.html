@@ -34,7 +34,10 @@
         </div>
         <span class="bar-label"></span>
       </div>
-
+      <div class="bar-labels">
+        <span class="bar-label" ng-repeat="val in values">{{val}}%</span>
+      </div>
+      <!--
       <div class="bar-labels">
         <span class="bar-label">107.50%</span>
         <span class="bar-label"></span>
@@ -48,6 +51,7 @@
         <span class="bar-label"></span>
         <span class="bar-label">95 %</span>
       </div>
+      -->
       
       <div class="bar-labels-right">
         <span class="bar-label" style="color: orange; font-size: 16px; top: {{barPercent}}%;">{{pos}}</span>
