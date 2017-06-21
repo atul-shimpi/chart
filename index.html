@@ -28,21 +28,21 @@
        
         
         <div class="bar" style="{{barStyle}}">
-          <div class="bar-info" ng-class="{'info-above': infoAbove}">
-            
+          <div class="bar-labels-right">
+          {{pos}}
           </div>
         </div>
         <span class="bar-label"></span>
       </div>
 
       <div class="bar-labels">
-        <span class="bar-label">107.50 %</span>
+        <span class="bar-label">107.50%</span>
         <span class="bar-label"></span>
-        <span class="bar-label">105 %</span>
+        <span class="bar-label">105.00 %</span>
         <span class="bar-label"></span>
         <span class="bar-label">102.50 %</span>        
         <span class="bar-label"></span>
-        <span class="bar-label">100 %</span>
+        <span class="bar-label">100.00 %</span>
         <span class="bar-label"></span>
         <span class="bar-label">97.50 %</span>
         <span class="bar-label"></span>
@@ -50,18 +50,10 @@
       </div>
       
       <div class="bar-labels-right">
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label" style="color: orange; font-size: 16px;">102.50 %</span>        
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
-        <span class="bar-label"></span>
+        <span class="bar-label" style="color: orange; font-size: 16px; top: {{barPercent}}%;">{{pos}}</span>
       </div>
+      
+      
     </div> <!-- /.goal-bar -->
   </div>
 

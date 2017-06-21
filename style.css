@@ -138,9 +138,11 @@ body {
 .goal-bar .bar-info {
   position: relative;
   margin: 15px;
+  left: 105px;
 }
 .goal-bar .bar-info.info-above {
-  top: -75px;
+  #top: -75px;
+  left: 105px;
 }
 .goal-bar .bar-info .bar-info-inner {
   padding: 10px;
@@ -153,10 +155,11 @@ body {
 .goal-bar .bar-labels-right {
   position: absolute;
   top: 0px;
-  left: 105px;
+  left: 85px;
   width: 70px;
   height: 100%;
   font-size: 12px;
   line-height: 12px;
   color: #c7c7c7;
+  text-align: left;
 }
