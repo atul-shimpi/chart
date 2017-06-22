@@ -17,6 +17,7 @@ goalbar.controller('GoalBarController', function($scope) {
    
   var calculateBarPercent = function() {    
     var percent = ($scope.current / $scope.goal) * 100;  
+    percent = percent > 100 ? 100 : percent;
     return percent < 1 ? 0 : percent;
   };
   
