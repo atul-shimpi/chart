@@ -6,7 +6,7 @@ goalbar.controller('GoalBarController', function($scope) {
   
   // $scope.goal = max value from array
   $scope.goal = $scope.values[$scope.values.length - 1];   
-  $scope.current = 59;
+  $scope.current = 58;
   $scope.infoAbove = false;  
  
   $scope.$watch('current', function() {

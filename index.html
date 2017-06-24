@@ -15,16 +15,8 @@
   
     <div class="goal-bar" ng-controller="GoalBarController">
       <div class="bar-wrap">
-        <hr class="bar-line" />
-        <hr class="bar-line" />
-        <hr class="bar-line" />        
-        <hr class="bar-line" />
-        <hr class="bar-line" />
-        <hr class="bar-line" />
-        <hr class="bar-line" />
-        <hr class="bar-line" />
-        <hr class="bar-line" />
-        <hr class="bar-line" />       
+        <hr class="bar-line" ng-repeat="val in values" ng-style="{'top': {{(500/values.length)*($index + 1)}} + 'px'}" /> 
+       
         
         <div class="bar" style="{{barStyle}}">
           <div class="bar-labels-right">
@@ -34,27 +26,17 @@
         <span class="bar-label"></span>
       </div>
 
-      <div class="bar-labels">       
-        <span id="5" class="bar-label" ng-style="{'display': showLabel(6)}">107.50%</span>
-        <span class="bar-label"></span>
-        
-        <span id="4" class="bar-label" ng-style="{'display': showLabel(5)}">105.00 %</span>
-        <span class="bar-label"></span>
-       
-        <span id="3" class="bar-label" ng-style="{'display': showLabel(4)}">102.50 %</span>        
-        <span class="bar-label"></span>
-        
-        <span id="2" class="bar-label">100.00 %</span>
-        <span class="bar-label"></span>
-        
-        <span id="1" class="bar-label" >97.50 %</span>
-        <span class="bar-label"></span>
-        
-        <span id="0" class="bar-label">95 %</span>
+      <div class="bar-labels">
+       <span 
+          class="bar-label"
+          ng-repeat="val in values"
+          ng-style="{'top': {{(500/values.length)*($index)}} + 'px'}">
+          {{values[(values.length - 1) - $index]}} %
+        </span>  
       </div>
       
       <div class="bar-labels-right">
-        <span class="bar-label" style="color: orange; font-size: 16px; top: {{barPercent}}%;">{{pos}}</span>
+        <span class="bar-label" style="color: orange; font-size: 16px; top: {{barPercent}}%;">{{current}} %</span>
       </div>
       
       
