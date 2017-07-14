@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onClick="document.designMode = 'on'; updateDOM();">Draw Calender</button>
+    <button onClick="remove();">Remove</button>
+    <button onClick="update();">Update</button>
+    <button onClick="addChild();">Add Child</button>
+    <p>
+    <script>
+      drawMonths();
+      drawMonthNames();
+      
+      
+      //console.log(document.getElementById('jan').Attr);
+      
+      function addChild() {
+         // january
+        var mar = document.createElement('div');
+        
+        mar.id = 'mar';
+        mar.style.height = "150px";
+        mar.style.width = "150px";
+        mar.style.background = "thistle";
+        mar.style.marginRight = "20px";
+        mar.style.display = "inline-block";
+        
+        document.body.insertBefore(mar, document.getElementById('apr'));
+        
+        //alert(document.getElementById('apr').baseURI);
+        //document.body.insertBefore(mar,null);
+      }
+      
+      function remove() {
+        document.getElementById('mar').remove();
+      }
+      
+      function update() {
+        document.getElementById('jan').style.background = 'steelblue';
+      }
+      
+      function updateDOM() {
+        drawMonths();
+        drawMonthNames();
+        
+        
+      }
+      
+      function drawMonthNames() {
+        // january 
+        var janElement = document.createElement('h3');
+        
+        janElement.appendChild(document.createTextNode('January'));        
+        document.getElementById('jan').appendChild(janElement);
+        
+        // feb 
+        var janElement = document.createElement('h3');
+        
+        janElement.appendChild(document.createTextNode('February'));        
+        document.getElementById('feb').appendChild(janElement);
+        
+        // april 
+        var janElement = document.createElement('h3');
+        
+        janElement.appendChild(document.createTextNode('April'));        
+        document.getElementById('apr').appendChild(janElement);       
+      }
+      
+      function drawMonths() {
+        // january
+        var jan = document.createElement('div');
+        
+        jan.id = 'jan';
+        jan.style.height = "150px";
+        jan.style.width = "150px";
+        jan.style.background = "lightgreen";
+        jan.style.marginBottom = "20px";
+        jan.style.display = 'inline-block';
+        jan.style.marginRight = "20px";
+       
+        
+        document.body.appendChild(jan);
+        
+        // feb
+        var jan = document.createElement('div');
+        
+        jan.id = 'feb';
+        jan.style.height = "150px";
+        jan.style.width = "150px";
+        jan.style.background = "lightblue";
+        jan.style.marginBottom = "20px";
+        jan.style.display = 'inline-block';
+        jan.style.marginRight = "20px";
+        
+        document.body.appendChild(jan);
+        
+        
+        // april
+        var apr = document.createElement('div');
+        
+        apr.id = 'apr';
+        apr.style.height = "150px";
+        apr.style.width = "150px";
+        apr.style.background = "lightpink";
+        apr.style.display = 'inline-block';
+        
+        document.body.appendChild(apr);
+      }
+    </script>
+  </body>
+</html>

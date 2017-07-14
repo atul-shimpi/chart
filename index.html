@@ -1,54 +1,112 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<link rel="stylesheet" href="style.css">
-<head>
-</head>
-<body>
-<div  class="container">
-<div class="page-header">
-  <h2 style="margin: 0;">Performance to Plan</h2>
-</div>
-</div>
-<div ng-app="goalbar">
-  <div class="bar-container">
-  
-    <div class="goal-bar" ng-controller="GoalBarController">
-      <div class="bar-wrap">
-        <hr class="bar-line" ng-repeat="val in values" ng-style="{'top': {{(500/values.length)*($index + 1)}} + 'px'}" /> 
-       
+<html>
+  <head>
+  </head>
+  <body>
+    <style>
+      input[type] {
+        width: 100px;
+        margin-right: 20px;
+      }
+    </style>
+    
+    <script>
+      var prevFilter;
+      
+      function filter(type) {
+        if (prevFilter) {
+          var types = document.getElementsByClassName(prevFilter);
         
-        <div class="bar" style="{{barStyle}}">
-          <div class="bar-labels-right">
-          {{pos}}
-          </div>
-        </div>
-        <span class="bar-label"></span>
-      </div>
-
-      <div class="bar-labels">
-       <span 
-          class="bar-label"
-          ng-repeat="val in values"
-          ng-style="{'top': {{(500/values.length)*($index)}} + 'px'}">
-          {{values[(values.length - 1) - $index]}} %
-        </span>  
-      </div>
+        for (var idx = 0; idx < types.length; idx++) {
+          types[idx].style.color = 'black';            
+        }
+        }
+       
+        var filterVal = prompt("Enter " + type);
+        var types = document.getElementsByClassName(filterVal);
+        
+        if (types.length == 0) {
+          alert('Invalid filter');
+          return;
+        }
+        for (var idx = 0; idx < types.length; idx++) {
+          types[idx].style.color = 'red';            
+        }
+        
+        prevFilter = filterVal;
+      }
       
-      <div class="bar-labels-right">
-        <span class="bar-label" style="color: orange; font-size: 16px; top: {{barPercent}}%;">{{current}} %</span>
-      </div>
+      function askForFilter(type) {
+      }
+    </script>
+    
+    <h2>Automobile World</h2>
+    <input type="button" value="Type" onClick="filter('Type')">
+    
+    <p>
+    <table style="width: 50%; border: 1;" border="1">
+      <tr>
+        <th>Type</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Fuel-Type</th>
+      </tr>
       
+      <tr class="car">
+        <td>Car</th>
+        <td>Maruti</th>
+        <td>Maruti Swift Dzire</th>
+        <td>Petrol</th>
+      </tr>
       
-    </div> <!-- /.goal-bar -->
-  </div>
-
-</div>
-<div  class="container">
-<div class="page-header">
-  <h4 style="margin: 0;">Sales Index %</h4>
-</div>
-</div>
-<script src='app.js'></script>
-</body>
+      <tr class="car">
+        <td>Car</th>
+        <td>Maruti</th>
+        <td>Maruti Baleno</th>
+        <td>Petrol</th>
+      </tr>
+      
+      <tr class="car">
+        <td>Car</th>
+        <td>Tata</th>
+        <td>Tata Tiago</th>
+        <td>Diesel</th>
+      </tr>
+      
+      <tr class="car">
+        <td>Car</th>
+        <td>Tata</th>
+        <td>Tata Tigor</th>
+        <td>Petrol</th>
+      </tr>
+      
+      <tr class="car">
+        <td>Car</th>
+        <td>Renault</th>
+        <td>Renault KWID</th>
+        <td>Petrol</th>
+      </tr>
+      
+      <tr class="2-Wheeler">
+        <td>2-Wheeler</th>
+        <td>Honda</th>
+        <td>Splendour</th>
+        <td>Petrol</th>
+      </tr>
+      
+      <tr class="2-Wheeler">
+        <td>2-Wheeler</th>
+        <td>Honda</th>
+        <td>Honda CB 100R</th>
+        <td>Petrol</th>
+      </tr>
+      
+      <tr class="2-Wheeler">
+        <td>2-Wheeler</th>
+        <td>Bajaj</th>
+        <td>Bajaj Pulsar</th>
+        <td>Petrol</th>
+      </tr>
+    </table>
+  </body>
 </html>
